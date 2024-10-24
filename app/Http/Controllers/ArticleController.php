@@ -57,7 +57,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         try {
-            $Article = Article::with("scategorie")->findOrFail($id);
+            $Article = Article::with("articles")->findOrFail($id);
             return response()->json($Article);
         } catch (\Throwable $th) {
             //throw $th;
